@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criptografia</title>
+
+
+</head>
+
+<body>
+    <h1>Criptografia</h1>
+    <br>
+
+    <form>
+        <h2></h2>
+        <select name="" id="escCripto">
+            <option value="base64">Base64</option>
+            <option value="cifra">Cifra de césar</option>
+        </select>
+
+
+        <input type="number" name="passos" id="chave" min="1" max="25" required
+            placeholder="1 ate 25">incremento</input>
+        <textarea name="msg" id="msg" required></textarea>
+        <button id="btn" >Criptografar</button>
+        <button onclick="desripto()">Descriptografar</button>
+    </form>
+    <div id="rep">
+        <div>
+
+
+
+
+
+            <script defer>
+
+
+                const mensagem = document.querySelector("#msg");
+                const rep = document.querySelector("#rep")
+                const btn = document.querySelector("#btn")
+                const escCripto = document.querySelector("#escCripto");
+
+
+
+                btn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    if (mensagem.value == "") {
+                        rep.innerHTML = `null`;
+                    } else {
+                        rep.innerHTML = `codificado ${btoa(mensagem.value)} `
+                    }
+                var texto = JSON.stringify(mensagem.value); ///tramforma objeto em sting
+                console.log(typeof texto)
+                console.log(typeof mensagem)
+                console.log(texto.trim().length)
+
+                console.log(texto.charAt(2))//busca valor na string
+                console.log(texto[2]) //busca valor na string
+                console.log(texto.slice(',')) // tranf string em areyy
+                console.log(texto.substr(3 ,1))//busca valor na string
+
+                console.log( mensagem.value.charAt(2))
+                
+
+                })
+                
+                
+               
+               
+
+                /*/ /// pocura.indexof
+                const mensagem = document.querySelector("#msg");
+                
+                const chave = document.querySelector("#chave");
+                
+                return text.replace(pesquise por x, substiua por y)
+                texto.toUpperCase() dfffff
+
+                /var x = 'A';
+                //var key = 5 ;
+                //var ascii_code = x.charCodeAt(0);
+                //console.log(ascii_code + 5);
+                
+                escCripto.addEventListener('click', () => {
+                    escCripto.addEventListener('chenge', () => {})
+                    switch (escCripto.value){
+                        case "crifa":
+                        mensagem.setAttribute("disabled")
+                        break;
+                        case  "base64":
+                        mensagem.removeAttribute("disabled")
+                        break;    
+                    }
+                
+                
+                var x = '';
+                var y =  '';
+                var ascii_code1 = x.charCodeAt(0);
+                var ascii_code2 = y.charCodeAt(0);
+                
+                console.log(ascii_code1);
+                
+                console.log(ascii_code2);
+                let text = "banaba" 
+                console.log(text.replace);
+                console.log(String.fromCharCode());
+                
+                
+                
+                ///
+                
+                
+                
+                
+                const encrypt = (text, shift) => { 
+                    return text.replace(/[A--zZa]/g, c => {
+                        if (isUpperCase(c)) {
+                            return String.fromCharCode(((c.charCodeAt(0) - 65 + shift) % 26) + 65)
+                        } else {
+                            return String.fromCharCode(((c.charCodeAt(0) - 97 + shift) % 26) + 97)
+                        }
+                    })
+                }
+                
+                
+                
+                const decrypt = () => {
+                    const text = document.querySelector('#textToDecrypt').value
+                    const shift = Number(document.querySelector('#shift').value)
+                
+                    const unshift = (26 - shift) % 26
+                    const result = encrypt(text, unshift)
+                
+                    document.querySelector('#result').innerText = result
+                }
+                
+                
+                
+                let text = String.fromCharCode(66);
+                document.getElementById("demo").innerHTML = text; 
+                
+                
+                
+                
+                
+                
+                
+                function cripto(){
+                
+                    msg.sort()
+                     console.log(msg)
+                  
+                }
+                
+                
+                const desripto = () => { }
+                *///   
+
+
+            </script>
+
+</body>
+
+</html>
