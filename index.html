@@ -22,8 +22,9 @@
         </select>
 
 
-        <input type="number" name="passos" id="chave" min="1" max="25" required
-            placeholder="1 ate 25">incremento</input>
+        <!--<input type="number" name="passos" id="chave" min="1" max="25" required
+            placeholder="1 ate 25">incremento</input>-->
+            
         <textarea name="msg" id="msg" required></textarea>
         <button id="btn" >Criptografar</button>
         <button onclick="desripto()">Descriptografar</button>
@@ -39,24 +40,33 @@
 
 
                 const mensagem = document.querySelector("#msg");
-                const rep = document.querySelector("#rep")
-                const btn = document.querySelector("#btn")
+                const rep = document.querySelector("#rep");
+                const btn = document.querySelector("#btn");
                 const escCripto = document.querySelector("#escCripto");
 
 
 
                 btn.addEventListener('click', (e) => {
                     e.preventDefault();
+            
+
                     if (mensagem.value == "") {
                         rep.innerHTML = `null`;
                     } else {
-                        rep.innerHTML = `codificado ${btoa(mensagem.value)} `
+                        rep.innerHTML = `codificado <strong>${btoa(mensagem.value)}</strong> `
                     }
-                var texto = JSON.stringify(mensagem.value); ///tramforma objeto em sting
+
+
+              ///  var texto = JSON.stringify(mensagem.value); ///tramforma objeto em sting
+
+                let texto = "aaa"
+                
                 console.log(typeof texto)
                 console.log(typeof mensagem)
-                console.log(texto.trim().length)
-
+               // console.log(texto.length)
+                console.log(mensagem[2])
+                
+                console.log(texto.charCodeAt(2)+ 3)//numero 
                 console.log(texto.charAt(2))//busca valor na string
                 console.log(texto[2]) //busca valor na string
                 console.log(texto.slice(',')) // tranf string em areyy
@@ -68,9 +78,9 @@
                 })
                 
                 
+                //console.log(texto.trim().length)// remover espacos
                
-               
-
+                //rep.innerHTML = `codigo ${mensagem.value.charCodeAt(0)} ` 
                 /*/ /// pocura.indexof
                 const mensagem = document.querySelector("#msg");
                 
@@ -112,8 +122,8 @@
                 
                 ///
                 
-                
-                
+                String.fromCharCode(num))
+
                 
                 const encrypt = (text, shift) => { 
                     return text.replace(/[A--zZa]/g, c => {
