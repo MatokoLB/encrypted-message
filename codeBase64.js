@@ -1,26 +1,25 @@
-const menssagem = document.querySelector("#msg");
-const rep = document.querySelector("#rep")
+const mensagem = document.querySelector("#msg");
+const rep = document.querySelector("#rep");
+const btnCripto = document.querySelector("#btnCripto");
+const btnDescripto = document.querySelector("#btnDescripto");
 
 
-function cripto(){
-    //document.write(btoa(menssagem.value)); 
-   rep.innerHTML = `codificado ${btoa(menssagem.value)} `
-}
-
-const desripto = () => { rep.innerHTML = ` <textarea> descodificado ${atob(menssagem.value)}</textarea> `}
-
-///////////////////////////////////
-
-btn.addEventListener('click', (e) => {
+btnCripto.addEventListener('click', (e) => {
     e.preventDefault();
     
-    if (menssagem.value == "") {
+    if (mensagem.value == "") {
         rep.innerHTML = `null`
     } else {
-        rep.innerHTML = `codificado ${btoa(menssagem.value)} `
+        rep.innerHTML = `codificado ${btoa(mensagem.value)} `
     }
 })
 
-function cripto() {
-
-}
+btnDescripto.addEventListener('click', (e) => {
+    e.preventDefault();
+    
+    if (mensagem.value == "") {
+        rep.innerHTML = `null`
+    } else {
+        rep.innerHTML = `codificado ${atob(mensagem.value)} `
+    }
+})
