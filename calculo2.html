@@ -18,7 +18,7 @@
     </form>
     <div id="rep"></div>
     <div id="rep2"></div>
-    
+
 
 
     <script defer>
@@ -29,7 +29,7 @@
         const rep = document.querySelector("#rep");
         const rep2 = document.querySelector("#rep2");
 
-              
+
         btn.addEventListener('click', (e) => {
             e.preventDefault();
 
@@ -37,39 +37,51 @@
             let chave = parseInt(key.value)
 
             for (let i = 0; i < msg.value.length; i++) {
-            
 
-                if (msg.value.charCodeAt(i) >= 65 && msg.value.charCodeAt(i) <= 90 || 
-                msg.value.charCodeAt(i) >= 97 && msg.value.charCodeAt(i) <= 122) {
-                    chave = parseInt(key.value) 
+                if (msg.value.charCodeAt(i) >= 65 && msg.value.charCodeAt(i) <= 90 ||
+                    msg.value.charCodeAt(i) >= 97 && msg.value.charCodeAt(i) <= 122) {
+                    chave = parseInt(key.value)
+                    
+                
                 } else {
-                    chave = 0} 
+                    chave = 0
+                }
+                
+                    if (chave + msg.value.charCodeAt(i) >= 91){
+                    let letraCodificada = String.fromCharCode(64 + chave)
+                    textoCofificado = textoCofificado.concat(letraCodificada);
+                }   else {
+                      
+                    let letraCodificada = String.fromCharCode(msg.value.charCodeAt(i) + chave)
+                    textoCofificado = textoCofificado.concat(letraCodificada);
+                }
                 
 
-
-                    rep.innerHTML = `<P> letra origiral: ${msg.value.charAt(i)}</P>
+                rep.innerHTML = `<P> letra origiral: ${msg.value.charAt(i)}</P>
             <P>letra codigo da letra: ${msg.value.charCodeAt(i)}</P>
             <P>letra chave de incremeto: ${chave}</P> 
-            <P>chave para retorna alfabeto: ${(chave + msg.value.charCodeAt(i)) % 26 }</P> 
+            <P>chave para retorna alfabeto: ${String.fromCharCode(64 + chave)}</P> 
             <P>codigo da letra + chave de incremeto: ${chave + msg.value.charCodeAt(i)}</P> 
             <P>nova letra ${String.fromCharCode(msg.value.charCodeAt(i) + chave)}</P> 
             <P>tamanho do texto : ${msg.value.length}</P>`
 
 
 
-                    let letraCodificada = String.fromCharCode(msg.value.charCodeAt(i) + chave)
-                    textoCofificado = textoCofificado.concat(letraCodificada);
+                
+            }
+            rep2.innerHTML = ` texto normal:${msg.value}  <br><br> texto criptografado:${textoCofificado}`
 
-                }
-                rep2.innerHTML = ` texto normal:${msg.value}  <br><br> texto criptografado:${textoCofificado}`
-
-            })
+        })
         // if (String.fromCharCode(msg.value.charCodeAt(i) >= 65)) {}
 
         ///let letra = msg.value.charAt(0)   letra original
             ///let codigo =  msg.value.charCodeAt(0)  codigo da letra
             /// chave de icremento
-            /// l let novaLetra = String.fromCharCode(0) letra na tabela ACS representada pelo codigo     
+            /// l let novaLetra = String.fromCharCode(0) letra na tabela ACS representada pelo codigo
+
+            //A B C D E F G H I J K L M N O P Q R S T U V W X Y Z//
+            //a b c d e f g h i j k l m n o p q r s t u v w x y z//
+
     </script>
 
 </body>

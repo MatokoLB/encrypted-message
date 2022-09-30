@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>calculo3</title>
+</head>
+
+<body>
+
+    <form action="">
+        <textarea id="msg" type="text"></textarea>
+        <input type="number" name="chave" id="chave" min="1" max="25" required placeholder="1 ate 25">incremento</input>
+        <button id="btn">enviar</button>
+
+    </form>
+    <div id="rep"></div>
+    <div id="rep2"></div>
+
+
+    <script defer>
+        const msg = document.querySelector("#msg");
+        const key = document.querySelector("#chave");
+        const btn = document.querySelector("#btn");
+        const rep = document.querySelector("#rep");
+        const rep2 = document.querySelector("#rep2");
+
+
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+
+            let textoCofificado = ''
+            let chave = parseInt(key.value)
+            let tamanhoTexto = msg.value.length;
+
+            for (let i = 0; i < tamanhoTexto; i++) {
+
+                let letraOriginal = msg.value.charAt(i);
+                let letraCodificada = ''
+                let codigoLetra = msg.value.charCodeAt(i);
+                let resetAlfabertoMasc = String.fromCharCode(64 + chave);
+                let resetAlfabertoMins = String.fromCharCode(96 + chave);
+                let lcodigoChave = chave + msg.value.charCodeAt(i);
+                let proximaLetra = String.fromCharCode(msg.value.charCodeAt(i) + chave);
+                
+                let tamanhoOriginal = msg.value;
+
+                if (codigoLetra >= 65 && codigoLetra <= 90 ||
+                    codigoLetra >= 97 && codigoLetra <= 122) {
+                    chave = parseInt(key.value)
+                } else { chave = 0 }
+
+                /*if (chave + codigoLetra >= 91) {
+                    letraCodificada = resetAlfabertoMasc
+                    textoCofificado = textoCofificado.concat(letraCodificada);
+                }*/
+                
+                letraCodificada = proximaLetra
+                textoCofificado = textoCofificado.concat(letraCodificada);
+
+
+                rep.innerHTML =
+                    `<P> letra origiral: ${letraOriginal}</P>
+            <P>letra codigo da letra: ${codigoLetra}</P>
+            <P>letra chave de incremeto: ${chave}</P> 
+            <P>chave para retorna alfabeto: ${resetAlfabertoMasc}</P> 
+            <P>codigo da letra + chave de incremeto: ${lcodigoChave}</P> 
+            <P>nova letra ${proximaLetra}</P> 
+            <P>tamanho do texto : ${tamanhoTexto}</P>`
+            
+            rep2.innerHTML = ` texto normal:${tamanhoOriginal}  <br><br> texto criptografado:${textoCofificado}`
+            }
+
+           
+        })
+
+    </script>
+
+</body>
+
+</html>
