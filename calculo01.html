@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+
+<body>
+
+    <div id="este">...</div>
+    <div id="este2">..</div>
+
+
+
+    <script>
+
+        const este = document.querySelector("#este")
+        const este2 = document.querySelector("#este2")
+
+        let chave = 1
+        let texto = "abcdef"
+        let novotexto = ""
+        
+        let novaletra = ""
+
+        este.innerHTML = `<h1>${(chave)}</h1>`
+        este2.innerHTML = ` texto normal:${novaletra}  <br><br> texto criptografado:${novotexto}`
+
+
+
+       for (let i = 0; i < texto.length ; i++) {
+
+            if (texto.fromCharCode(i) >= 65 && texto.fromCharCode(i) <= 90 || texto.fromCharCode(i) >= 97 && texto.fromCharCode(i) <= 122) {
+                chave = 1
+            } else {
+                chave = 0
+           
+
+
+            let novaletra = texto.fromCharCode((i) + chave)
+            novotexto = novotexto.concat(novaletra);
+
+
+        } }
+        
+
+
+    </script>
+
+</body>
+
+</html>
