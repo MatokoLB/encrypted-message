@@ -49,15 +49,17 @@
                 } else {
                     chave = 0
                 }
-                
-                let proximaLetra = String.fromCharCode(codigoLetra + chave);
 
-                if (lcodigoChave >= 123) {
-                    chave = parseInt(key.value)
-                    proximaLetra = String.fromCharCode(chave + 96)
+                let proximaLetra = String.fromCharCode(codigoLetra + chave).toLowerCase();
+
+                  C = 0;
+                while (lcodigoChave >= 123 + C && lcodigoChave <=148 && codigoLetra <= 122 && C <= 26) {
+                    proximaLetra = String.fromCharCode(97 + C).toLowerCase();
+                    C++
                 }
 
-                
+
+
                 let letraOriginal = textoOriginal.charAt(i);
 
                 let resetAlfabertoMasc = String.fromCharCode(64 + chave);
