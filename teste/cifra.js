@@ -10,19 +10,6 @@ let app =  {
 
         }
     },
-    computerd: {
-        opitions() {
-            let options = [{ value: null, text: 'cesar' }]
-
-            for (let i = 1; i <= 26; i++) {
-                options.push = ({ value: i, text: i });
-
-            }
-
-            return options
-        }
-
-    },
     methods: {
         encrypte() {
             this.alphabetCipher = this.alphabet

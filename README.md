@@ -1,2 +1,2 @@
 # encrypted-message
-site para criptografar messenger de texto
+Site para criptografar messengens de texto.

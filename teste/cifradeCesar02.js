@@ -1,62 +1,67 @@
+const resp = document.querySelector("#resp");
 
 function encrypte() {
-    
-    var num = document.querySelector("#selected").value;
-    var selected = parseInt(num)
+
+    let num = document.querySelector("#selected").value;
+    let selected = parseInt(num)
     console.log(selected)
-    /*abcdefghijklmnopqrstuvwxyz*/
-    var text = document.querySelector("#textarea1").value;
-    var textCripher= ""
-    var alphabet= 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'
-    var alphabetCipher = ''
-    
+
+    let text = document.querySelector("#textarea1").value;
+    let textCripher = ""
+    let alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'
+    let alphabetCipher = ''
+
+
     alphabetCipher = alphabet
-    alphabetCipher = shifArrey(alphabetCipher.split(""), selected).join("")
+    alphabetCipher = shifArrey(alphabetCipher.split(''), selected).join('')
     textCripher = cryptText(text, alphabet, alphabetCipher)
 
     console.log(alphabetCipher)
     console.log(text)
     console.log(textCripher)
+
+
+    resp.innerHTML = `${textCripher} `
 }
 
 
 function decrypt() {
 
-    var num = document.querySelector("#selected").value;
-    var selected = parseInt(num)
+    let num = document.querySelector("#selected").value;
+    let selected = parseInt(num)
     console.log(selected)
-    /*abcdefghijklmnopqrstuvwxyz*/
-    var text = document.querySelector("#textarea1").value;
-    var textCripher= ""
-    var alphabet= 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'
-    var alphabetCipher = ''
-    
+
+    let text = document.querySelector("#textarea1").value;
+    let textCripher = ""
+    let alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'
+    let alphabetCipher = ''
 
 
     alphabetCipher = alphabet
-    alphabetCipher = shifArrey(alphabetCipher.split(""), selected).join("")
+    alphabetCipher = shifArrey(alphabetCipher.split(''), selected).join('')
 
     textCripher = cryptText(text, alphabetCipher, alphabet)
 
-        
+
     console.log(alphabetCipher)
     console.log(text)
-    console.log(textCripher)
+
+    resp.innerHTML = `${textCripher.replace(/,/g,)} `
 
 }
 
-function shifArrey(arr, num) { 
-    
+
+function shifArrey(arr, num) {
+
     console.log(arr)
     console.log(num)
     console.log(arr.slice(num).concat(arr.slice(0, num)))
-    
+
 
     return arr.slice(num).concat(arr.slice(0, num))
-    
-   
-
 }
+
+
 
 function cryptText(text, alphabet, alphabetCipher) {
     const numArr = []
@@ -67,13 +72,9 @@ function cryptText(text, alphabet, alphabetCipher) {
             numArr.push(alphabet.indexOf(el))
         } else {
             numArr.push(el)
-        }  
+        }
         console.log(textArr)
     })
-
-    
-  
-   
 
     return numArr.map(n => {
         let arr = []
@@ -87,7 +88,8 @@ function cryptText(text, alphabet, alphabetCipher) {
             arr = n
         }
         console.log(arr)
-        return arr 
-    }).join()
-        
+        return arr
+    }).join('')
+
 }
+

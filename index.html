@@ -5,36 +5,77 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="templede.css">
     <title>Criptografia</title>
-
-
 </head>
 
 <body>
-    <h1>Criptografia</h1>
-    <br>
+    <main>
+        <div id="display">
+        <h1>Criptografia de dados</h1>
+        <form>
+            <select name="" id="chooseCrypto">
+                <option value=""disabled selected >Escolha a criptografia</option>
+                <option value="base64">Base64</option>
+                <option value="cifra">Cifra de césar</option>
+                
+            </select>
+            
+            <div class="chooseKey">
+                <br/>
+                <hr>
+                <label for="Selected">Chave</label>
+                <select name="key" id="selected">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">11</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                    <option value="13">13</option>
+                    <option value="14">14</option>
+                    <option value="15">15</option>
+                    <option value="16">16</option>
+                    <option value="17">17</option>
+                    <option value="18">18</option>
+                    <option value="19">19</option>
+                    <option value="20">20</option>
+                    <option value="21">21</option>
+                    <option value="22">22</option>
+                    <option value="23">23</option>
+                    <option value="24">24</option>
+                    <option value="25">25</option>
+                </select>
+            </div>
 
-    <form>
-        <h2></h2>
-        <select name="" id="escolhaCripto">
-            <option value="base64">Base64</option>
-            <option value="cifra">Cifra de césar</option>
-        </select>
+            <br/>
+            <textarea name="msg" id="msg" cols="25" rows="4"></textarea>
+            <br/>
+
+            <div>
+                <textarea id="resp" disabled cols="25"rows="4"></textarea>
+            </div>
+
+            <br/>
+            <button id="btnCrypto">Criptografar</button>
+            <button id="btnDecrypt">Descriptografar</button>
+        </form>
+
+    </div>
+    </main>       
+     <script src="main.js"></script>
+</body>
+
+</html>
 
 
-        <!--<input type="number" name="passos" id="chave" min="1" max="25" required
-            placeholder="1 ate 25">incremento</input>-->
 
-        <textarea name="msg" id="msg" required></textarea>
-        <button id="btnCripto" >Criptografar</button>
-        <button id="btnDescripto">Descriptografar</button>
-
-    </form>
-    <div id="rep"><div>
-    <div id="rep2"></div>
-
-        <script src="cifradeCesar.js"></script>
-        <script src="codeBase64.js"></script>  
 </body>
 
 </html>

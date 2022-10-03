@@ -11,9 +11,7 @@ let chave = 1
     let textoCofificado = ''
 
     for (let i = 0; i < msg.value.length; i++) {
-          
-        
-        
+             
         let letraCodificada = String.fromCharCode(msg.value.charCodeAt(i) + chave)
         textoCofificado = textoCofificado.concat(letraCodificada);
 

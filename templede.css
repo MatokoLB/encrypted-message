@@ -1,0 +1,19 @@
+* root{
+
+    margin: 0px;
+    box-sizing: border-box;
+
+}
+
+body{
+    display: flex;
+    justify-content: center;
+}
+#display{
+   
+    padding: 20px;
+    border-radius: 30px; 
+    text-align: center;
+    background-color: rgba(182, 174, 174, 0.781);
+    box-shadow: 0px 5px 5px; 
+}
