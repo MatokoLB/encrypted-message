@@ -6,6 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="templede.css">
+    <link rel="shortcut icon" href="img/icon.svg" type="image/x-icon">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,300&display=swap" rel="stylesheet">
+
     <title>Criptografia</title>
 </head>
 
@@ -54,6 +59,13 @@
                 </select>
             </div>
 
+            <div class="btnChoose">
+                <label for="codificar">Criptografar</label>
+                <input type="radio" name="Action" id="btnCrypto" class="radioBtn" value="CryptoAction" >
+                <label for="decodificar">Descriptografar</label>
+                <input type="radio" name="Action" id="btnDecrypt" class="radioBtn" value="DecryptAction">
+              </div>
+
             <br/>
             <textarea name="msg" id="msg" cols="25" rows="4"></textarea>
             <br/>
@@ -63,8 +75,7 @@
             </div>
 
             <br/>
-            <button id="btnCrypto">Criptografar</button>
-            <button id="btnDecrypt">Descriptografar</button>
+            <button id="btnAction">Escolher uma ação</button>
         </form>
 
     </div>

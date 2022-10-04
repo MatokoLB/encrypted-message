@@ -1,49 +1,96 @@
 const text = document.querySelector("#msg");
 const chooseCrypto = document.querySelector("#chooseCrypto");
-const chooseKey = document.querySelector(".chooseKey");  
+const chooseKey = document.querySelector(".chooseKey");
 const btnCrypto = document.querySelector("#btnCrypto");
 const btnDecrypt = document.querySelector("#btnDecrypt");
+const btnAction = document.querySelector("#btnAction");
+const btnChoose = document.querySelector(".btnChoose");
 const resp = document.querySelector("#resp");
 const num = document.querySelector("#selected");
 
 
-  
 
-chooseCrypto.addEventListener('change', (e) => {
+btnAction.addEventListener('click', (e) => {
+    e.preventDefault()
+
+    if (btnCrypto.checked){
+        if (chooseCrypto.value == "base64") {
+            base64Encrypte();
+            
+        }
+        if (chooseCrypto.value == "cifra") {
+            encrypte();
+           
+        }}
+     if (btnDecrypt.checked) {
+        if (chooseCrypto.value == "base64") {
+            base64Decrypt();
+           
+        }
+        if (chooseCrypto.value == "cifra") {
+            decrypt();
+            
+        }
+    }
+})
+
+btnChoose.addEventListener("change" ,(e) =>{
+             
+        if(btnCrypto.checked){
+            btnAction.innerHTML =" Codificar"
+        } else (
+            btnAction.innerHTML =" Decodificar"
+        )
+
+})
+
+
+
+
+
+chooseCrypto.addEventListener('click', (e) => {
     e.preventDefault();
-    
+
     if (chooseCrypto.value == "base64") {
         num.setAttribute('disabled', '');
+        document.querySelector("body").style.backgroundImage = "url('/img/img2.png')";
+        document.querySelector("#display").style.color = "#ffffff"
+        document.querySelector("#display").style.backgroundColor = "#21225ae3";
+
     } else {
         num.removeAttribute('disabled');
-    }      
+        document.querySelector("body").style.backgroundImage = "url('/img/img1.png')";
+        document.querySelector("#display").style.color = "#000000"
+        document.querySelector("#display").style.backgroundColor = "#cfc5b2e3";
+    }
 })
 
 
-
-btnCrypto.addEventListener('click', (e) => {
+/*
+btnCrypto.addEventListener('change', (e) => {
     e.preventDefault();
 
     if (chooseCrypto.value == "base64") {
-        base64Encrypte() ;
+        btnAction = base64Encrypte();
     }
     if (chooseCrypto.value == "cifra") {
-       encrypte() ;
+        btnAction = encrypte();
     }
-        
+
 })
 
 
-btnDecrypt.addEventListener('click', (e) => {
-    e.preventDefault();  
+btnDecrypt.addEventListener('change', (e) => {
+    e.preventDefault();
 
     if (chooseCrypto.value == "base64") {
-        base64Decrypt()
-    }  
+        btnAction = base64Decrypt()
+    }
     if (chooseCrypto.value == "cifra") {
-        decrypt() ;
-     }
+        btnAction = decrypt();
+    }
 })
+*/
 
 
 function base64Encrypte() {
@@ -57,14 +104,13 @@ function base64Encrypte() {
 
 
 function base64Decrypt() {
-  
+
     if (text.value == "") {
         resp.innerHTML = `Campo vazio`
     } else {
         resp.innerHTML = `${atob(text.value)} `
     }
 }
-
 
 
 
@@ -90,20 +136,20 @@ function encrypte() {
     console.log(text)
     console.log(textCripher)
 
-       
+
 
     if (textCripher == "") {
         resp.innerHTML = `Campo vazio`
     } else {
         resp.innerHTML = `${textCripher} `
     }
-    
+
 }
 
 
 function decrypt() {
 
-    
+
     let selected = parseInt(num.value)
     console.log(selected)
 
@@ -131,7 +177,6 @@ function decrypt() {
 
 }
 
-
 function shifArrey(arr, num) {
 
     console.log(arr)
@@ -157,10 +202,10 @@ function cryptText(text, alphabet, alphabetCipher) {
         console.log(textArr)
     })
 
+
     return numArr.map(n => {
         let arr = []
         console.log(numArr)
-
 
 
         if (Number.isInteger(n)) {
