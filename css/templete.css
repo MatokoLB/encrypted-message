@@ -1,0 +1,149 @@
+* root {
+
+    margin: 0px;
+    box-sizing: border-box;
+
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    
+    background-image: url("./img/img1.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    transition: 2s;
+
+}
+
+main{
+    display: flex;
+    justify-content: center;
+}
+
+#display {
+    padding: 20px;
+    border-radius: 30px;
+    text-align: center;
+    background-color: #cfc5b2e3;
+    transition: 2s;
+
+}
+
+#chooseCrypto {
+    height: 30px;
+    background-color: rgba(226, 236, 236, 0.822);
+    outline: none;
+    border-radius: 10px;
+    font-size: 1.2rem;
+}
+
+.chooseKey {
+    font-size: 1.2rem;
+}
+
+.chooseKey select {
+    margin-bottom: 15px;
+    height: 30px;
+    background-color: rgba(226, 236, 236, 0.822);
+    border-radius: 10px;
+}
+
+.btnChoose {
+    font-size: 1.2rem;
+    accent-color: #070707;
+    ;
+}
+
+
+textarea {
+    background-color: rgba(226, 236, 236, 0.822);
+    resize: none;
+    resize: none;
+    resize: none;
+    border-radius: 5px;
+    outline: none;
+    margin-bottom: 20px;
+    resize: none;
+
+}
+
+#btnAction {
+    font-size: 1.2rem;
+    border-radius: 5px;
+    border: none;
+}
+
+#btnAction:hover {
+    font-size: 1.2rem;
+    border-radius: 5px;
+    border: none;
+    background-color: chartreuse;
+    transition: 1s;
+}
+
+.erro{
+    display: none;
+}
+
+.erro::before {
+    content: '';
+    height: 4px;
+    width: 150px;
+    margin: 0 auto;
+    align-self: center;
+    align-items: center;
+    background-color: red;
+    display: flex;
+    color: rgb(184, 37, 37);
+    border-radius: 15px;
+}
+
+.erro2::before{
+    content: 'preencha esse campo';
+    width: 140px;
+    font-size: 0.9rem;
+    margin: 0 auto;
+    display: flex;
+    color: rgb(184, 37, 37);
+    
+    
+}
+
+.erro2::after{
+    content: '';
+    height: 4px;
+    width: 70%;
+    margin: 0 auto;
+    align-self: center;
+    align-items: center;
+    background-color: red;
+    display: flex;
+    color: rgb(184, 37, 37);
+    border-radius: 15px;
+    margin-top: 2px;
+
+}
+
+
+.rodape {
+    justify-content: center;
+    display: flex;
+    padding: 7px;
+    margin: 0 auto;
+}
+
+.rodape p {
+    text-align: center;
+    color:#ffff;
+}
+
+.rodape a {
+    color:#ffff;
+    transition: 1s;
+}
+
+.rodape a:hover {
+    color: greenyellow;
+    transition: 1s;
+}

@@ -1,10 +1,10 @@
 const text = document.querySelector("#msg");
 const chooseCrypto = document.querySelector("#chooseCrypto");
 const chooseKey = document.querySelector(".chooseKey");
+const btnChoose = document.querySelector(".btnChoose");
 const btnCrypto = document.querySelector("#btnCrypto");
 const btnDecrypt = document.querySelector("#btnDecrypt");
 const btnAction = document.querySelector("#btnAction");
-const btnChoose = document.querySelector(".btnChoose");
 const resp = document.querySelector("#resp");
 const num = document.querySelector("#selected");
 
@@ -13,34 +13,48 @@ const num = document.querySelector("#selected");
 btnAction.addEventListener('click', (e) => {
     e.preventDefault()
 
-    if (btnCrypto.checked){
+    if (btnCrypto.checked) {
         if (chooseCrypto.value == "base64") {
             base64Encrypte();
-            
+
         }
         if (chooseCrypto.value == "cifra") {
             encrypte();
-           
-        }}
-     if (btnDecrypt.checked) {
+
+        }
+    }
+    if (btnDecrypt.checked) {
         if (chooseCrypto.value == "base64") {
             base64Decrypt();
-           
+
         }
         if (chooseCrypto.value == "cifra") {
             decrypt();
-            
         }
     }
+
+
+    if (chooseCrypto.value == "select") {
+        document.querySelector(".erro").style.display = "block";
+    } 
+
+    if(btnCrypto.checked == false && btnDecrypt.checked == false){
+        btnChoose.classList.add("erro2");    
+    } else{
+        btnChoose.classList.remove("erro2");  
+    }   
+
 })
 
-btnChoose.addEventListener("change" ,(e) =>{
-             
-        if(btnCrypto.checked){
-            btnAction.innerHTML =" Codificar"
-        } else (
-            btnAction.innerHTML =" Decodificar"
-        )
+btnChoose.addEventListener("change", (e) => {
+
+    if (btnCrypto.checked) {
+        btnAction.innerHTML = " Codificar"
+    } else (
+        btnAction.innerHTML = " Decodificar"
+    )
+
+    btnChoose.classList.remove("erro2");  
 
 })
 
@@ -52,17 +66,27 @@ chooseCrypto.addEventListener('click', (e) => {
     e.preventDefault();
 
     if (chooseCrypto.value == "base64") {
-        num.setAttribute('disabled', '');
-        document.querySelector("body").style.backgroundImage = "url('/img/img2.png')";
+        chooseKey.style.display = "none";
+
+        /* num.setAttribute('disabled', '');*/
+        document.querySelector("body").style.backgroundImage = "url('./img/img2.png')";
         document.querySelector("#display").style.color = "#ffffff"
         document.querySelector("#display").style.backgroundColor = "#21225ae3";
 
     } else {
-        num.removeAttribute('disabled');
-        document.querySelector("body").style.backgroundImage = "url('/img/img1.png')";
+        /* num.removeAttribute('disabled');*/
+        chooseKey.style.display = "block";
+        document.querySelector("body").style.backgroundImage = "url('./img/img1.png')";
         document.querySelector("#display").style.color = "#000000"
         document.querySelector("#display").style.backgroundColor = "#cfc5b2e3";
     }
+      
+    
+    if (chooseCrypto.value == "base64"|| chooseCrypto.value == "cifra"){
+       document.querySelector(".erro").style.display = "none"; 
+    }
+    
+
 })
 
 
@@ -76,9 +100,7 @@ btnCrypto.addEventListener('change', (e) => {
     if (chooseCrypto.value == "cifra") {
         btnAction = encrypte();
     }
-
 })
-
 
 btnDecrypt.addEventListener('change', (e) => {
     e.preventDefault();
@@ -100,7 +122,6 @@ function base64Encrypte() {
         resp.innerHTML = `${btoa(text.value)} `
     }
 }
-
 
 
 function base64Decrypt() {
@@ -177,13 +198,11 @@ function decrypt() {
 
 }
 
-function shifArrey(arr, num) {
 
+function shifArrey(arr, num) {
     console.log(arr)
     console.log(num)
     console.log(arr.slice(num).concat(arr.slice(0, num)))
-
-
     return arr.slice(num).concat(arr.slice(0, num))
 }
 

@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/templede.css">
-    <link rel="shortcut icon" href="/img/icon.svg" type="image/x-icon">
+    <link rel="stylesheet" href="./css/templete.css">
+    <link rel="shortcut icon" href="./img/icon.svg" type="image/x-icon">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,300&display=swap" rel="stylesheet">
@@ -19,17 +19,21 @@
         <div id="display">
         <h1>Criptografia de dados</h1>
         <form>
+          
             <select name="" id="chooseCrypto">
-                <option value=""disabled selected >Escolha a criptografia</option>
+                <option value="select"disabled  selected >Escolha a criptografia</option>
                 <option value="base64">Base64</option>
                 <option value="cifra">Cifra de césar</option>
-                
-            </select>
+            </select> 
+            <div class="erro">
+                preencha esse campo
+            </div> 
             
+            <hr>
             <div class="chooseKey">
                 <br/>
-                <hr>
                 <label for="Selected">Chave</label>
+                <br/>
                 <select name="key" id="selected">
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -58,8 +62,8 @@
                     <option value="25">25</option>
                 </select>
             </div>
-
-            <div class="btnChoose">
+       
+            <div class="btnChoose ">
                 <label for="codificar">Criptografar</label>
                 <input type="radio" name="Action" id="btnCrypto" class="radioBtn" value="CryptoAction" >
                 <label for="decodificar">Descriptografar</label>
@@ -76,11 +80,21 @@
 
             <br/>
             <button id="btnAction">Escolher uma ação</button>
+           
+            
         </form>
 
+            <div class="rodape">
+                <p>©MakotoLB - | Design by <a href="https://github.com/MatokoLB"
+                        target="_blank">MakotoLB</a>  | <a href="https://github.com/MatokoLB"
+                        target="_blank">Linkedin </a>
+                </p>
+            </div>
+
     </div>
-    </main>       
-     <script src="/js/main.js"></script>
+    </main>
+
+     <script src="./js/main.js"></script>
 </body>
 
 </html>
