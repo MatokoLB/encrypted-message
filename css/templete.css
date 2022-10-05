@@ -7,8 +7,8 @@
 
 body {
     font-family: 'Roboto', sans-serif;
-    
-    background-image: url("./img/img1.png");
+
+    background-image: url("../img/img1.png");
     background-repeat: no-repeat;
     background-size: cover;
     height: 100vh;
@@ -16,27 +16,62 @@ body {
 
 }
 
-main{
+main {
     display: flex;
     justify-content: center;
 }
 
+
 #display {
     padding: 20px;
-    border-radius: 30px;
+    border-radius: 30px 0px 30px 30px;
     text-align: center;
     background-color: #cfc5b2e3;
     transition: 2s;
-
 }
+
+#icons {
+    justify-content: center;
+    display: flex;
+    margin-bottom: -25px;
+    margin-left: 240px;
+}
+
+#icons a {
+    background-size: cover;
+    height: 40px;
+    width: 40px;
+    margin: 1px;
+    margin-top: 10px;
+    border-radius: 10px;
+    z-index: 1;
+    transition: 2s;
+}
+
+#icons a:hover {
+    background-color: greenyellow;
+}
+
+.img1 {
+    background-image: url("../img/github.png");
+}
+
+.img2 {
+    background-image: url("../img/linkedin.png");
+}
+
 
 #chooseCrypto {
     height: 30px;
     background-color: rgba(226, 236, 236, 0.822);
     outline: none;
-    border-radius: 10px;
+    border-radius: 5px;
     font-size: 1.2rem;
+    border: none;
+    width: 75%;
+    text-align: center;
 }
+
 
 .chooseKey {
     font-size: 1.2rem;
@@ -59,12 +94,10 @@ main{
 textarea {
     background-color: rgba(226, 236, 236, 0.822);
     resize: none;
-    resize: none;
-    resize: none;
     border-radius: 5px;
     outline: none;
     margin-bottom: 20px;
-    resize: none;
+
 
 }
 
@@ -72,6 +105,8 @@ textarea {
     font-size: 1.2rem;
     border-radius: 5px;
     border: none;
+    padding: 8px;
+    width: 75%;
 }
 
 #btnAction:hover {
@@ -82,7 +117,7 @@ textarea {
     transition: 1s;
 }
 
-.erro{
+.erro {
     display: none;
 }
 
@@ -99,18 +134,18 @@ textarea {
     border-radius: 15px;
 }
 
-.erro2::before{
+.erro2::before {
     content: 'preencha esse campo';
     width: 140px;
     font-size: 0.9rem;
     margin: 0 auto;
     display: flex;
     color: rgb(184, 37, 37);
-    
-    
+
+
 }
 
-.erro2::after{
+.erro2::after {
     content: '';
     height: 4px;
     width: 70%;
@@ -135,15 +170,37 @@ textarea {
 
 .rodape p {
     text-align: center;
-    color:#ffff;
+    color: #000;
 }
 
 .rodape a {
-    color:#ffff;
+
+    color: #000;
     transition: 1s;
 }
 
 .rodape a:hover {
     color: greenyellow;
     transition: 1s;
+}
+
+#display2 {
+    background-color: #cfc5b2e3;
+    height: 300px;
+    width: 600px;
+    padding: 20px;
+    border-radius: 0px 20px 20px 0px;
+    font-size: 1rem;
+    display: none;
+  animation: cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+
+#display2 button{
+    border: none;
+}
+
+#display2 button:hover{
+transition: 1s;
+background-color: rgb(255, 2, 2);
 }
